@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     Rigidbody2D rb;
-    public float input;
+    float input;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         input = Input.GetAxisRaw("Horizontal"); //obtiene el Input de unity (detecta que el input horizontal es A/D o Dcha/Izda)
     }
 
-    void FixedUpdate() //es fixedupdate para que las colisiones de la nave con las paredes no se vuelvan locas.
+    void FixedUpdate() //es fixedupdate para que la nave, al colisionar con las paredes, no empiece a temblar.
     {
         transform.Translate(Vector2.right * input * speed * Time.fixedDeltaTime); //mueve la nave cuando se presiona el input, en funcion de speed)
     }
