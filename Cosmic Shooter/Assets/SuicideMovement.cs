@@ -22,9 +22,9 @@ public class SuicideMovement : MonoBehaviour
           oscilateTime = timer;
           goRight = true;
       }
-      if(oscilateTime <= 0)
+      if(oscilateTime <= -oscilateTime)
       {
-          oscilateTime = 0;
+          oscilateTime = -oscilateTime;
           goRight = false;
       }
 
@@ -55,7 +55,7 @@ public class SuicideMovement : MonoBehaviour
 
    void OnTriggerEnter2D(Collider2D other)
    {
-       if(other.CompareTag("Player"))
+       if(other.CompareTag("Player") || other.CompareTag("Eliminator"))
        {
            GameObject fx = Instantiate(explosion, transform.position, Quaternion.identity);
            Destroy(gameObject);

@@ -20,7 +20,6 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && Time.time > nextFireTime) // Si el jugador presiona espacio y el cooldown ha acabado
         {
             Shoot();
-            nextFireTime = Time.time + cooldownTime; //disparar y añadir cooldown
         }
    }
 

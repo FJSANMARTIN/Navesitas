@@ -17,7 +17,7 @@ public class AsteroidMovement : MonoBehaviour
 
    void OnTriggerEnter2D(Collider2D other)
    {
-       if(other.CompareTag("Player"))
+       if(other.CompareTag("Player") || other.CompareTag("Eliminator"))
        {
            GameObject fx = Instantiate(explosion, transform.position, Quaternion.identity);
            Destroy(gameObject);
